@@ -53,4 +53,4 @@ jobs:
           app-name: 'UntoldStory'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50B55C5C11D04D7399F1B0EE0099DC05 }}
-          package: .
+          package: ecc_site
