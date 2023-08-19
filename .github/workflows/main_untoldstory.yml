@@ -23,6 +23,7 @@ jobs:
 
       - name: npm install, build, and test
         run: |
+          cd ecc_site   # Navigate to the ecc_site directory
           npm install
           npm run build --if-present
           npm run test --if-present
@@ -31,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: node-app
-          path: .
+          path: ecc_site   # Upload the ecc_site directory
 
   deploy:
     runs-on: ubuntu-latest
@@ -53,4 +54,4 @@ jobs:
           app-name: 'UntoldStory'
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_50B55C5C11D04D7399F1B0EE0099DC05 }}
-          package: ecc_site
+          package: ecc_site   # Deploy the ecc_site directory
